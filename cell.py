@@ -32,3 +32,8 @@ class Cell:
         if self.has_bottom_wall is True:
             line = Line(Point(self.__x1, self.__y2), Point(self.__x2, self.__y2))
             self.__win.draw_line(line, fill_color)
+
+    def draw_move(self, to_cell, undo=False):
+        line = Line(Point(0.5*(self.__x1 + self.__x2), 0.5*(self.__y1 + self.__y2)), 
+                    Point(0.5*(to_cell.__x1 + to_cell.__x2), 0.5*(to_cell.__y1 + to_cell.__y2)))
+        self.__win.draw_line(line, "red" if not undo else "gray")
