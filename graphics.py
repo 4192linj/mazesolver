@@ -6,7 +6,7 @@ class Window:
         self.__root.title("Maze Solver")
         self.__root.protocol("WM_DELETE_WINDOW", self.close)
         self.__canvas = Canvas(self.__root, bg = "white", height = height, width = width)
-        self.__canvas.pack()
+        self.__canvas.pack(fill = BOTH, expand = 1)
         self.__running = False
         
     
@@ -41,4 +41,6 @@ class Line:
         canvas.create_line(self.point1.x, self.point1.y,
                           self.point2.x, self.point2.y,
                           fill = fill_color, width = 2)
+        
+
     
