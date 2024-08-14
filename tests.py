@@ -18,5 +18,11 @@ class TestMaze(unittest.TestCase):
         self.assertEqual(maze._cells[0][0].has_top_wall, False)
         self.assertEqual(maze._cells[-1][-1].has_bottom_wall, False)
 
+    def test_maze_cells_reset(self):
+        maze = Maze(x1 = 0, y1 = 0, num_rows = 10, num_cols = 10, cell_size_x = 30, cell_size_y = 30)
+        for i in range(maze.num_rows):
+            for j in range(maze.num_cols):
+                self.assertEqual(maze._cells[i][j].visited, False)
+
 if __name__ == "__main__":
     unittest.main()

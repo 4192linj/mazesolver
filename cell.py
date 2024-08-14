@@ -11,6 +11,7 @@ class Cell:
         self.has_top_wall = True
         self.has_bottom_wall = True
         self.__win = win
+        self.visited = False
 
     def draw(self, x1, y1, x2, y2, fill_color = "black"):
         if self.__win is None:
@@ -21,6 +22,9 @@ class Cell:
         self.__y1 = y1
         self.__x2 = x2
         self.__y2 = y2
+
+        # this assumes that each cell has a x and y coordinate
+        # so if the user forgets to input the coordinates, the program will crash
 
         # Left wall
         line = Line(Point(self.__x1, self.__y1), Point(self.__x1, self.__y2))
