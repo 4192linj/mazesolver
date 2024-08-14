@@ -86,7 +86,6 @@ class Maze:
                 self._cells[i][j + 1].has_top_wall = False
             
             self._draw_cell(i, j)
-            self._draw_cell(next_x, next_y)
             self._break_walls_r(next_x, next_y)
 
     def _reset_cells_visited(self):
